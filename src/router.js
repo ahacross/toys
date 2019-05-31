@@ -1,25 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Constant from '@/store/constant'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('./views/Home.vue')
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/xlsx',
+      name: 'xlsx',
+      component: () => import(/* webpackChunkName: "about" */ './views/XlsxParser.vue')
     }
   ]
 })
+
+// 현재 페이지 정보 추가
+router.afterEach((to, from) => {
+  router.app.$store.dispatch(Constant.CHANGE_VIEW, { view: to.name })
+})
+
+export default router

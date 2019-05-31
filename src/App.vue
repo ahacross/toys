@@ -1,29 +1,57 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <v-app id="sandbox" :dark="dark">
+      <v-navigation-drawer
+        v-model="primaryDrawer.model"
+        :permanent="primaryDrawer.type === 'permanent'"
+        :temporary="primaryDrawer.type === 'temporary'"
+        :clipped="primaryDrawer.clipped"
+        :floating="primaryDrawer.floating"
+        :mini-variant="primaryDrawer.mini"
+        absolute
+        overflow
+        app
+      >
+        <Menus />
+      </v-navigation-drawer>
+      <v-toolbar :clipped-left="primaryDrawer.clipped" app absolute>
+        <v-toolbar-side-icon
+          v-if="primaryDrawer.type !== 'permanent'"
+          @click.stop="primaryDrawer.model = !primaryDrawer.model"
+        ></v-toolbar-side-icon>
+        <v-toolbar-title>장난감들...</v-toolbar-title>
+      </v-toolbar>
+      <v-content>
+        <v-container fluid>
+          <v-layout align-center justify-center>
+            <router-view />
+          </v-layout>
+        </v-container>
+      </v-content>
+      <v-footer :inset="footer.inset" app>
+<!--        <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>-->
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import Menus from '@/components/Menus'
+export default {
+  data: () => ({
+    dark: true,
+    drawers: ['Default (no property)', 'Permanent', 'Temporary'],
+    primaryDrawer: {
+      model: null,
+      type: 'temporary',
+      clipped: false,
+      floating: false,
+      mini: false
+    },
+    footer: {
+      inset: false
     }
-  }
+  }),
+  components: { Menus }
 }
-</style>
+</script>

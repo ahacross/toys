@@ -1,4 +1,4 @@
-# kanban
+# toys
 
 ## Project setup
 ```
