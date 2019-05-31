@@ -21,7 +21,7 @@ const router = new Router({
     {
       path: '/xlsx',
       name: 'xlsx',
-      component: () => import(/* webpackChunkName: "about" */ './views/XlsxParser.vue')
+      component: () => import('./views/XlsxParser.vue')
     }
   ]
 })

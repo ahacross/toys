@@ -15,7 +15,7 @@ new Vue({
   store,
   render: h => h(App),
   metaInfo: {
-    title: '이것저것',
+    title: 'toys',
     titleTemplate: '%s ㅎㅎㅎ',
     meta: [
       { charset: 'utf-8' },

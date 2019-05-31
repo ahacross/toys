@@ -7,7 +7,7 @@
         <v-btn color="cyan" dark @click="makeTable">table 변환</v-btn>
       </div>
       <div v-if="viewTable">
-        <TuiGrid  :columns="table.columns" :data="table.data" :bodyHeight="-100"></TuiGrid>
+        <TuiGrid  :columns="table.columns" :data="table.data" ></TuiGrid>
       </div>
 
 <!--      <textarea id="resultQuery" rows="30" style="width:100%;"></textarea>-->
