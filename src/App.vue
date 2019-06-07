@@ -28,7 +28,7 @@
           </v-layout>
         </v-container>
       </v-content>
-      <v-footer :inset="footer.inset" app>
+      <v-footer v-if="footer.inset" :inset="footer.inset" app>
 <!--        <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>-->
       </v-footer>
     </v-app>
@@ -55,3 +55,10 @@ export default {
   components: { Menus }
 }
 </script>
+
+<style>
+  html {
+    overflow: hidden;
+    margin: 0 auto;
+  }
+</style>

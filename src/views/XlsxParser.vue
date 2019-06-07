@@ -1,7 +1,7 @@
 <template>
   <div class="width100">
     <input type="file" id="fileUpload" accept=".xlsx, .xls" @change="Upload" />
-    <textarea id="fileDataObj" rows="10"  />
+    <textarea id="fileDataObj" rows="10"></textarea>
     <div v-if="excelDatas">
       <div class="center">
         <v-btn color="cyan" dark @click="makeTable">table 변환</v-btn>

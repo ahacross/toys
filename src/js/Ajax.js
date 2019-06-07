@@ -55,7 +55,11 @@ class Ajax {
 
   async run (fn) {
     await this.promise().then((res) => {
-      fn(res.data)
+      if (res.$) {
+        fn(res)
+      } else {
+        fn(res.data)
+      }
     }).catch((err) => {
       console.error(err)
     })
@@ -67,7 +71,7 @@ class Ajax {
       let data = res.data
 
       if (typeof data === 'string' && /xml/.test(data) && !/!DOCTYPE html/.test(data)) {
-        res.data = xmlConverter.xml2js(data, {compact: true, ignoreComment: true, spaces: 4, textKey: 'text'})
+        res.data = xmlConverter.xml2js(data, { compact: true, ignoreComment: true, spaces: 4, textKey: 'text' })
       } else if (/!DOCTYPE/.test(data)) {
         res.$ = cheerio.load(data)
       }

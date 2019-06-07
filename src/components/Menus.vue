@@ -37,7 +37,8 @@ export default {
       items: [
         { title: 'Home', icon: 'dashboard', routerName: 'home' },
         { title: 'About', icon: 'question_answer', routerName: 'about' },
-        { title: 'Xlsx', icon: 'question_answer', routerName: 'xlsx' }
+        { title: 'Xlsx', icon: 'question_answer', routerName: 'xlsx' },
+        { title: '영화관(CGV)', icon: 'question_answer', routerName: 'cgv' }
       ],
       right: null
     }

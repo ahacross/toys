@@ -22,6 +22,11 @@ const router = new Router({
       path: '/xlsx',
       name: 'xlsx',
       component: () => import('./views/XlsxParser.vue')
+    },
+    {
+      path: '/cinema/cgv',
+      name: 'cgv',
+      component: () => import('./components/cinema/cgv')
     }
   ]
 })
