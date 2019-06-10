@@ -12,6 +12,12 @@ class Ajax {
     return this
   }
 
+  openApi () {
+    this._options.url = 'https://ahacross.me/apis/openApi'
+    this._options.method = 'POST'
+    return this
+  }
+
   method (method) {
     this._options.method = method
     return this
