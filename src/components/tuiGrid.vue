@@ -6,7 +6,6 @@
 import { mapActions } from 'vuex'
 import Constant from '../store/constant'
 import Grid from 'tui-grid'
-import $ from 'jquery'
 
 export default {
   name: 'tuiGrid',
@@ -19,7 +18,7 @@ export default {
     ...mapActions([Constant.DATA_SET]),
     initTable () {
       const params = {
-        el: $('#grid'),
+        el: document.getElementById('grid'),
         // rowHeight: 35,
         // rowHeaders: ['rowNum'],
         // header: {
@@ -42,7 +41,4 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
+<style src="tui-grid/dist/tui-grid.min.css"></style>
