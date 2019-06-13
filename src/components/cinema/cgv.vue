@@ -388,11 +388,6 @@ export default {
     font-style: normal;
   }
 
-  #cgv .round.lightblue {
-    border: 2px solid #3e82a4;
-    color: #3e82a4;
-  }
-
   #cgv .round {
     line-height: 23px;
     font-weight: 500;
@@ -431,4 +426,41 @@ export default {
     zoom: 1;
   }
 
+  #cgv .round ,#cgv .round > *{ display:inline-block; position:relative;  }
+  #cgv .round {line-height:23px; font-weight:500; font-size:12px; text-align:center; vertical-align:middle; background-color: inherit!important;}
+  #cgv .round > *{ box-sizing:border-box; -moz-box-sizing:border-box; width:100%; height:100%; padding:0 5px 0;} /* 20140620 Del padding-top:2px !important; */
+  *+html #cgv .round{ white-space:nowrap; }
+  *+html #cgv .round > *{  border:none !important; padding:0; cursor:pointer; }
+  #cgv .round:before, #cgv .round:after , #cgv .round > *:before, #cgv .round > *:after{ content:''; display:block; position:absolute; width:5px; height:5px; background:#fdfcf0 url('../../assets/cgv/sprite_corner01.png') no-repeat;}
+  #cgv .round.red{ border:2px solid #e71a0f; color:#e71a0f; }
+  #cgv .round.red:before{ left:-2px; top:-2px; background-position:0 0;}
+  #cgv .round.red:after{ left:-2px; bottom:-2px; background-position: 0 -5px;}
+  #cgv .round.red > *:before{ right:-2px; top:-2px; background-position:-5px 0;}
+  #cgv .round.red > *:after{ right:-2px; bottom:-2px; background-position:-5px -5px;}
+  #cgv .round.black{ border:2px solid #333333; color:#333333; }
+  #cgv .round.black:before{ left:-2px; top:-2px; background-position:-10px 0;}
+  #cgv .round.black:after{ left:-2px; bottom:-2px; background-position: -10px -5px;}
+  #cgv .round.black > *:before{ right:-2px; top:-2px; background-position:-15px 0;}
+  #cgv .round.black > *:after{ right:-2px; bottom:-2px; background-position:-15px -5px;}
+  #cgv .round.lightblue{ border:2px solid #3e82a4; color:#3e82a4; }
+  #cgv .round.lightblue:before{ left:-2px; top:-2px; background-position:-20px 0;}
+  #cgv .round.lightblue:after{ left:-2px; bottom:-2px; background-position: -20px -5px;}
+  #cgv .round.lightblue > *:before{ right:-2px; top:-2px; background-position:-25px 0;}
+  #cgv .round.lightblue > *:after{ right:-2px; bottom:-2px; background-position:-25px -5px;}
+  #cgv .round.brown{ border:2px solid #a16423; color:#a16423; }
+  #cgv .round.brown:before{ left:-2px; top:-2px; background-position:-30px 0;}
+  #cgv .round.brown:after{ left:-2px; bottom:-2px; background-position: -30px -5px;}
+  #cgv .round.brown > *:before{ right:-2px; top:-2px; background-position:-35px 0;}
+  #cgv .round.brown > *:after{ right:-2px; bottom:-2px; background-position:-35px -5px;}
+  #cgv .round.gray{ border:2px solid #7b7b7b; color:#7b7b7b; }
+  #cgv .round.gray:before{ left:-2px; top:-2px; background-position:-40px 0;}
+  #cgv .round.gray:after{ left:-2px; bottom:-2px; background-position: -40px -5px;}
+  #cgv .round.gray > *:before{ right:-2px; top:-2px; background-position:-45px 0;}
+  #cgv .round.gray > *:after{ right:-2px; bottom:-2px; background-position:-45px -5px;}
+
+  #cgv .round.white{ border:2px solid #fff; color:#fff; }
+  #cgv .round.white:before{ left:-2px; top:-2px; background-position:-90px 0;}
+  #cgv .round.white:after{ left:-2px; bottom:-2px; background-position: -90px -5px;}
+  #cgv .round.white > *:before{ right:-2px; top:-2px; background-position:-95px 0;}
+  #cgv .round.white > *:after{ right:-2px; bottom:-2px; background-position:-95px -5px;}
 </style>
