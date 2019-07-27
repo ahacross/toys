@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { request, common, $ } from '@/js/Common/'
+import { request, common, $, days } from '@/js/Common/'
 import cinemas from './cgvCinema.json'
 import Multiselect from 'vue-multiselect'
 window.request = request
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     cgv_queryStr (code, date) {
-      return `areacode=01&theaterCode=${code}&date=${date || new Date().format('yyyyMMdd')}`
+      return `areacode=01&theaterCode=${code}&date=${date || days().format('YYYYMMDD')}`
     },
     cgv_iframe (code, date) {
       return `http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?${this.cgv_queryStr(code, date)}`
