@@ -27,9 +27,10 @@
   </div>
 </template>
 <script>
-import { request, common, $ } from '@/js/Common'
+import { request, common, $ } from '@/js/Common/'
 import cinemas from './cgvCinema.json'
 import Multiselect from 'vue-multiselect'
+window.request = request
 
 export default {
   data () {

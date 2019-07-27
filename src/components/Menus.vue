@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { common } from '@/js/Common'
+import { common } from '@/js/Common/'
 
 export default {
   name: 'Menus',
@@ -36,9 +36,9 @@ export default {
     return {
       items: [
         { title: 'Home', icon: 'dashboard', routerName: 'home' },
-        { title: 'About', icon: 'question_answer', routerName: 'about' },
         { title: 'Xlsx', icon: 'question_answer', routerName: 'xlsx' },
-        { title: '영화관(CGV)', icon: 'question_answer', routerName: 'cgv' }
+        { title: '영화관(CGV)', icon: 'question_answer', routerName: 'cgv' },
+        { title: '환율', icon: 'question_answer', routerName: 'exchange' }
       ],
       right: null
     }

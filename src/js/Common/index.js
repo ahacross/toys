@@ -1,7 +1,9 @@
 import _ from 'lodash'
 import $ from 'jquery'
-import '@/js/AddPrototype'
-import request from '@/js/Ajax'
+import '@/js/Common/AddPrototype'
+import request from '@/js/Common/Ajax'
+import days from './Day'
+import validator from './Validator'
 
 class Common {
   deepCopy (obj) {
@@ -22,4 +24,4 @@ class Common {
 }
 const common = new Common()
 
-export { common, request, $, _ }
+export { request, common, $, _, days, validator }

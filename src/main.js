@@ -16,7 +16,7 @@ new Vue({
   render: h => h(App),
   metaInfo: {
     title: 'toys',
-    titleTemplate: '%s ㅎㅎㅎ',
+    titleTemplate: '%s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover' }

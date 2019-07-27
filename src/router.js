@@ -11,22 +11,22 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import('./views/Home.vue')
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/Home')
     },
     {
       path: '/xlsx',
       name: 'xlsx',
-      component: () => import('./views/XlsxParser.vue')
+      component: () => import('./views/XlsxParser')
     },
     {
       path: '/cinema/cgv',
       name: 'cgv',
       component: () => import('./components/cinema/cgv')
+    },
+    {
+      path: '/exchange',
+      name: 'exchange',
+      component: () => import('./views/Exchange')
     }
   ]
 })

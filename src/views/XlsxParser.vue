@@ -19,7 +19,7 @@
 import XLSX from 'xlsx'
 import TuiGrid from '../components/tuiGrid'
 import $ from 'jquery'
-import { common } from '../js/Common'
+import { common } from '../js/Common/'
 import { mapGetters } from 'vuex'
 import Constant from '../store/constant'
 

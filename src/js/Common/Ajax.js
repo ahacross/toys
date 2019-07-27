@@ -60,15 +60,18 @@ class Ajax {
   }
 
   async run (fn) {
-    await this.promise().then((res) => {
-      if (res.$) {
-        fn(res)
-      } else {
-        fn(res.data)
+    const result = await this.promise().then((res) => {
+      try {
+        if (res.$) {
+          return fn(res)
+        } else {
+          return fn(res.data)
+        }
+      } catch (err) {
+        console.error(err)
       }
-    }).catch((err) => {
-      console.error(err)
     })
+    return result
   }
 
   async promise () {
